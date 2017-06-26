@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from django_materialize.management.secret_key import get_secret_key
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+hcehwwx#x8nr+8cq2t*225mtx6nh+(1rlwwa%h18xj6_p52)4'
+SECRET_KEY = get_secret_key(os.path.join(BASE_DIR, 'secret_key.txt'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
