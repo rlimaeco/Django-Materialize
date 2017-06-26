@@ -121,6 +121,9 @@ ENV/
 
 # User-specific stuff:
 .idea/
+### Sass template
+.sass-cache/
+*.css.map
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/dictionaries
