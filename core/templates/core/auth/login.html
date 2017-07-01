@@ -1,1 +1,21 @@
-<h1>Hello there !</h1>
+{% extends 'core/base/core_html_base.html' %}
+{% block main_content %}
+
+
+  <div class="row">
+    <div class="col s12 m6">
+      <h2 class="header">Login</h2>
+      <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button class="waves-effect waves-light btn right" type="submit">Login</button>
+
+        <a href="{% url 'sign_up' %}">Register</a>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
