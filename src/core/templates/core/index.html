@@ -1,5 +1,5 @@
-{% extends 'core/base/core_html_base.html' %}
-{% block main_content %}
+{% templatetag openblock %} extends 'core/base/core_html_base.html' {% templatetag closeblock %}
+{% templatetag openblock %} block main_content {% templatetag closeblock %}
 
     <div class="row">
         <div class="col s12 m6">
@@ -10,4 +10,4 @@
         </div>
     </div>
 
-{% endblock %}
+{% templatetag openblock %} endblock {% templatetag closeblock %}

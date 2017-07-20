@@ -35,7 +35,7 @@ def create_virtualenv():
 @task
 def manage(*args, **kwargs):
     production = _prep_bool_arg(kwargs.get('production', True))
-    django_settings_module = 'django_materialize.settings' if production else 'django_materialize.settings.development'
+    django_settings_module = '{{ project_name }}.settings' if production else '{{ project_name }}.settings.development'
 
     with cd(PROJECT_PATH), virtualenv(), shell_env(DJANGO_SETTINGS_MODULE=django_settings_module):
         local('./src/manage.py %s' % ' '.join(args))

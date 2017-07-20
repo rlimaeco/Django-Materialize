@@ -1,24 +1,24 @@
-{% extends 'core/base/core_html_base.html' %}
-{% block main_content %}
+{% templatetag openblock %} extends 'core/base/core_html_base.html' {% templatetag closeblock %}
+{% templatetag openblock %} block main_content {% templatetag closeblock %}
 
     <div class="row">
         <div class="col s12 m6">
             <h2 class="header">Sign Up</h2>
             <form method="post">
-                {% csrf_token %}
+                {% templatetag openblock %} csrf_token {% templatetag closeblock %}
 
-                {% for field in form %}
-                    {{ field.errors }}
-                    {{ field.label_tag }}
-                    {{ field }}
-                {% endfor %}
+                {% templatetag openblock %} for field in form {% templatetag closeblock %}
+                    {% templatetag openvariable %} field.errors {% templatetag closevariable %}
+                    {% templatetag openvariable %} field.label_tag {% templatetag closevariable %}
+                    {% templatetag openvariable %} field {% templatetag closevariable %}
+                {% templatetag openblock %} endfor {% templatetag closeblock %}
 
                 <button class="waves-effect waves-light btn right" type="submit">Sign Up</button>
 
-                <a href="{% url 'login' %}">Login</a>
+                <a href="{% templatetag openblock %} url 'login' {% templatetag closeblock %}">Login</a>
 
             </form>
         </div>
     </div>
 
-{% endblock %}
+{% templatetag openblock %} endblock {% templatetag closeblock %}

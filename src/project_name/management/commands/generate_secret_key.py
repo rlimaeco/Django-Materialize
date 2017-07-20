@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from django_materialize.management.secret_key import secret_key
+from {{ project_name }}.management.secret_key import secret_key
 
 
 class Command(BaseCommand):

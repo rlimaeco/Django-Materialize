@@ -1,4 +1,4 @@
-from django_materialize.settings.base import *
+from {{ project_name }}.settings.base import *
 
 DEBUG = True
 

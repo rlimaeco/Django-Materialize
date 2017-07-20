@@ -1,5 +1,5 @@
-{% load static %}
-{% load menu_tags %}
+{% templatetag openblock %} load static {% templatetag closeblock %}
+{% templatetag openblock %} load menu_tags {% templatetag closeblock %}
 
 <nav>
     <div class="nav-wrapper">
@@ -7,22 +7,36 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
 
-            <li class="{% active_link 'index' %}"><a href="{% url 'index' %}">Index</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-            {% else %}
-                <li class="{% active_link 'sign_up' %}"><a href="{% url 'sign_up' %}">Sign Up</a></li>
-                <li class="{% active_link 'login' %}"><a href="{% url 'login' %}">Login</a></li>
-            {% endif %}
+            <li class="{% templatetag openblock %} active_link 'index' {% templatetag closeblock %}">
+                <a href="{% templatetag openblock %} url 'index' {% templatetag closeblock %}">Index</a>
+            </li>
+            {% templatetag openblock %} if user.is_authenticated {% templatetag closeblock %}
+                <li>
+                    <a href="{% templatetag openblock %} url 'logout' {% templatetag closeblock %}">Logout</a>
+                </li>
+            {% templatetag openblock %} else {% templatetag closeblock %}
+                <li class="{% templatetag openblock %} active_link 'sign_up' {% templatetag closeblock %}">
+                    <a href="{% templatetag openblock %} url 'sign_up' {% templatetag closeblock %}">Sign Up</a>
+                </li>
+                <li class="{% templatetag openblock %} active_link 'login' {% templatetag closeblock %}">
+                    <a href="{% templatetag openblock %} url 'login' {% templatetag closeblock %}">Login</a>
+                </li>
+            {% templatetag openblock %} endif {% templatetag closeblock %}
         </ul>
         <ul class="side-nav">
-            <li class="{% active_link 'index' %}"><a href="{% url 'index' %}">Index</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-            {% else %}
-                <li class="{% active_link 'sign_up' %}"><a href="{% url 'sign_up' %}">Sign Up</a></li>
-                <li class="{% active_link 'login' %}"><a href="{% url 'login' %}">Login</a></li>
-            {% endif %}
+            <li class="{% templatetag openblock %} active_link 'index' {% templatetag closeblock %}"><a href="{% templatetag openblock %} url 'index' {% templatetag closeblock %}">Index</a></li>
+            {% templatetag openblock %} if user.is_authenticated {% templatetag closeblock %}
+                <li>
+                    <a href="{% templatetag openblock %} url 'logout' {% templatetag closeblock %}">Logout</a>
+                </li>
+            {% templatetag openblock %} else {% templatetag closeblock %}
+                <li class="{% templatetag openblock %} active_link 'sign_up' {% templatetag closeblock %}">
+                    <a href="{% templatetag openblock %} url 'sign_up' {% templatetag closeblock %}">Sign Up</a>
+                </li>
+                <li class="{% templatetag openblock %} active_link 'login' {% templatetag closeblock %}">
+                    <a href="{% templatetag openblock %} url 'login' {% templatetag closeblock %}">Login</a>
+                </li>
+            {% templatetag openblock %} endif {% templatetag closeblock %}
         </ul>
     </div>
 </nav>
