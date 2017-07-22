@@ -27,7 +27,9 @@ This project has the following basic apps:
 ### Quick start
 
 To set up the project, you will need fabric and virtualenv:
-    1. `$ fab deploy:production=False,start_app=False`
+
+`$ fab deploy:production=False,start_app=False`
 
 To run the server, just use:
-    1. `$ fab runserver:production=False`
+
+`$ fab runserver:production=False`
