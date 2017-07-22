@@ -14,7 +14,7 @@ Rest of this README will be copied to the generated project.
 
 # {{ project_name }}
 
-{{ project_name }} is a _short description_. It is built with [Python][0] using the [Django Web Framework][1].
+{{ project_name }} is a _short description_. It is built with Python using the Django Web Framework.
 
 This project has the following basic apps:
 
