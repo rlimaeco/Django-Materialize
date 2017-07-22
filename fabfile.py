@@ -69,3 +69,16 @@ def runserver(production=True):
         pass
     else:
         manage("runserver", production=production)
+
+
+@task
+def test(coverage=True):
+    coverage = _prep_bool_arg(coverage)
+
+    if coverage:
+        with virtualenv():
+            local("coverage run --source='.' src/manage.py test")
+            local('coverage report')
+    else:
+        manage("test", production=False)
+
