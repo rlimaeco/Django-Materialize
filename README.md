@@ -14,7 +14,7 @@ Rest of this README will be copied to the generated project.
 
 # {{ project_name }}
 
-{{ project_name }} is a _short description_. It is built with [Python][0] using the [Django Web Framework][1].
+{{ project_name }} is a _short description_. It is built with Python using the Django Web Framework.
 
 This project has the following basic apps:
 
@@ -27,7 +27,9 @@ This project has the following basic apps:
 ### Quick start
 
 To set up the project, you will need fabric and virtualenv:
-    1. `$ fab deploy:production=False,start_app=False`
+
+`$ fab deploy:production=False,start_app=False`
 
 To run the server, just use:
-    1. `$ fab runserver:production=False`
+
+`$ fab runserver:production=False`
